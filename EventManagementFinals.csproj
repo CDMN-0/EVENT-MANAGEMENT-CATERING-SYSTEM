@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AC56816F-F1C9-4FD7-8D82-B8E7C46AECFA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UserInput</RootNamespace>
+    <AssemblyName>UserInput</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.101.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>packages\ClosedXML.0.101.0\lib\netstandard2.0\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML.Report, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b5435ca1fa2ab9d6, processorArchitecture=MSIL">
+      <HintPath>packages\ClosedXML.Report.0.2.6\lib\net462\ClosedXML.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Docking">
+      <HintPath>..\..\..\..\Downloads\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Navigator">
+      <HintPath>..\..\..\..\Downloads\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Ribbon">
+      <HintPath>..\..\..\..\Downloads\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit">
+      <HintPath>..\..\..\..\Downloads\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Workspace">
+      <HintPath>..\..\..\..\Downloads\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.16.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>packages\DocumentFormat.OpenXml.2.16.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="Irony, Version=1.0.11.0, Culture=neutral, PublicKeyToken=ca48ace7223ead47, processorArchitecture=MSIL">
+      <HintPath>packages\Irony.NetCore.1.0.11\lib\net461\Irony.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="MoreLinq, Version=3.3.2.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
+      <HintPath>packages\morelinq.3.3.2\lib\net451\MoreLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="Siticone.UI">
+      <HintPath>..\..\..\Siticone.UI\Siticone.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>packages\SixLabors.Fonts.1.0.0-beta19\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Packaging.6.0.0\lib\net461\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.UnmanagedMemoryStream, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.UnmanagedMemoryStream.4.3.0\lib\net46\System.IO.UnmanagedMemoryStream.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq.Dynamic.Core, Version=1.2.20.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
+      <HintPath>packages\System.Linq.Dynamic.Core.1.2.20\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="XLParser, Version=1.5.2.0, Culture=neutral, PublicKeyToken=63397e1e46bb91b4, processorArchitecture=MSIL">
+      <HintPath>packages\XLParser.1.5.2\lib\net461\XLParser.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminSetUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminSetUp.Designer.cs">
+      <DependentUpon>AdminSetUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_LogInUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_LogInUp.Designer.cs">
+      <DependentUpon>Admin_LogInUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard_Admin.Designer.cs">
+      <DependentUpon>Dashboard_Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FoodPackages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include=".Designer.cs">
+      <DependentUpon>FoodPackages.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisteredAccounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisteredAccounts.Designer.cs">
+      <DependentUpon>RegisteredAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="User_LoginUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User_LoginUp.Designer.cs">
+      <DependentUpon>User_LoginUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl2.Designer.cs">
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userReference.cs" />
+    <Compile Include="UserSetUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserSetUp.Designer.cs">
+      <DependentUpon>UserSetUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdminSetUp.resx">
+      <DependentUpon>AdminSetUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_LogInUp.resx">
+      <DependentUpon>Admin_LogInUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard_Admin.resx">
+      <DependentUpon>Dashboard_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodPackages.resx">
+      <DependentUpon>FoodPackages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisteredAccounts.resx">
+      <DependentUpon>RegisteredAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl2.resx">
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserSetUp.resx">
+      <DependentUpon>UserSetUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_LoginUp.resx">
+      <DependentUpon>User_LoginUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\waiter-s-hand-free-vector.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\waiter-s-hand-free-vector1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\888.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\56.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sdlogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sdlogo1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-shutdown-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-admin-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-feedback-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-feedback-24 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-restaurant-on-site-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red circle1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yellow_Circle1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ask-question-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-question-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-logout-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-question-mark-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CateringABC_Title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ABC Catering.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_Admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blue_Final_Background_User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redcircleN3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redcircleN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redcircleN31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redcircleN4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redcircleN1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yellowcircleN2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yellowcircleN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greencircleN1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greencircleN11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greencircleN2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redcircleN2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blue_Final_Left_Background1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blue_Final_Left_Background11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Left_Final_Background1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\12A.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\12AA.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\122B.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\13C.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\14DD.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\15E.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16FF.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-back-button-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-back-button-641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-go-back-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-go-back-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-go-back-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ABC Catering1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2548748.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\141774-abstract-cool-blue-geometric-shapes-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\eyeopensmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\eyeclosesmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eyeopen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-back-button-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-back-button-48 %281%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
